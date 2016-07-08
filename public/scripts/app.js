@@ -124,11 +124,15 @@ $(document).ready(function() {
         url: baseUrl + '/' + todoId,
         success: function onDeleteSuccess(json) {
           // remove deleted todo from all todos
-          allTodos.splice(allTodos.indexOf(todoToDelete), 1);
+          //if (index > -1) {
+            //allTodos.splice(index, -1);
+            app.delete('/api/todos/:id', function destroy(req, res){
+              var deleted_todo = todos.splice[0];
 
+            res.json(deleted_todo);
           // render all todos to view
           render();
-        }
+        });}
       });
     });
 
