@@ -97,7 +97,13 @@ app.delete('/api/todos/:id', function destroy(req, res) {
    * id specified in the route parameter (:id) and respond
    * with deleted todo.
    */
-   var deleted_todo = todos.splice([0]);
+   var todo_id = parseInt(req.params.id);
+   var each_to_do = 0;
+   var deleted_to_do_id = todos.filter(todo);
+   {
+      return todo._id == todo_id;
+   } [0];
+      todos.splice(todos.indexOf(deleted_to_do_id, 1)
 
    res.json(deleted_todo);
 });
